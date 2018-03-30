@@ -31,4 +31,4 @@ _ReSharper*/
 #Nuget packages folder
 packages/
 
-*/avrdude.ini
+avrdude.ini
