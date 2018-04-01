@@ -77,6 +77,9 @@ ISR(INT0_vect)
             case W1_STATE_RESET:
                 T0_RUN(T_RELAX);
                 break;
+            case W1_STATE_WAIT_COMMAND:
+                T0_STOP;
+                break;
             default:
                 T0_STOP;
         }
@@ -110,7 +113,7 @@ ISR(TIMER0_COMPB_vect)
             break;
         case W1_STATE_PRESENCE:
             W1_SEND_1;
-            T0_STOP;
+            
             //TODO
             w1_state = W1_STATE_IDLE;
             break;
